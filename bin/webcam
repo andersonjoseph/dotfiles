@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/home/anderson/bin/scrcpy-files/scrcpy --video-source=camera --v4l2-sink=/dev/video1  --no-audio --camera-size=1920x1080 --camera-fps=24 --no-window
+
