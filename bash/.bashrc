@@ -38,4 +38,4 @@ wtf() {
 alias cl='clear'
 
 # Prompt
-PS1='[\u] \w > '
+PS1='[\u@\h] \w > '
