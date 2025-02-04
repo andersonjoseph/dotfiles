@@ -35,5 +35,7 @@ wtf() {
     sudo $(history -p !!) 
 }
 
+alias cl='clear'
+
 # Prompt
 PS1='[\u] \w > '
