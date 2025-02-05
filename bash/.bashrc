@@ -38,13 +38,4 @@ wtf() {
 alias cl='clear'
 
 # Prompt
-# Add this function to parse git branch
-parse_git_branch() {
-    branch=$(git branch 2>/dev/null | grep '^*' | colrm 1 2)
-    if [ ! "${branch}" = "" ]; then
-        echo " ($branch)"
-    fi
-}
-
-# The prompt with both features
-PS1='\e[38;5;67m[\e[1;38;5;110m\u\e[0m\e[1;38;5;187m@\h\e[38;5;67m]\e[0m \e[38;5;140m\w\e[0m\e[38;5;108m$(parse_git_branch)\e[0m $(if [[ $? == 0 ]]; then echo "\e[38;5;209m>"; else echo "\e[38;5;203m>"; fi)\e[0m '
+source ~/.bash-powerline.sh
