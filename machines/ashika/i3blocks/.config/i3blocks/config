@@ -1,0 +1,20 @@
+[memory]
+command=echo $(free -m | awk 'NR==2{printf "%.2f%%\t\t", $3*100/$2 }')
+label=[ram]
+color=#DCD7BA
+interval=10
+
+[cpu]
+command=echo $(top -bn1 | grep load | awk '{printf "%.2f%%\t\t\n", $(NF-2)}')
+label=[cpu]
+color=#DCD7BA
+interval=10
+
+[pomodoro]
+command=scripts/pomodoro.sh
+interval=1
+
+[time]
+command=date '+%a %x %I:%M%P'
+color=#7E9CD8
+interval=60
