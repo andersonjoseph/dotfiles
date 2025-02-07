@@ -59,11 +59,6 @@ bindsym $mod+Home exec --no-startup-id sh -c "maim --select | xclip -selection c
 bindsym $mod+Home+Shift --release exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s).png"
 
 # Volume
-bindsym $mod+Up exec --no-startup-id pactl set-sink-port @DEFAULT_SINK@ analog-output-lineout && $refresh_i3status
-bindsym $mod+Down exec --no-startup-id pactl set-sink-port @DEFAULT_SINK@ analog-output-headphones && $refresh_i3status
-bindsym $mod+Right exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym $mod+Left exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
- 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -71,10 +66,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Brigthness
-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -204,7 +197,6 @@ client.placeholder      #1F1F28 #1F1F28 #DCD7BA #1F1F28   #1F1F28
 # Start i3bar to display a workspace bar
 bar {
 	font pango:GohuFont 11 Nerd Font Mono 10
-        tray_output HDMI-0
         status_command i3blocks
         position top
 
