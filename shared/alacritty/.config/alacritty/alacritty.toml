@@ -1,41 +1,19 @@
-# Colors (Kanagawa Wave)
-# Source https//github.com/rebelot/kanagawa.nvim
-
+# LACKLUSTER COLORS
 [colors.primary]
-background = '#1f1f28'
-foreground = '#dcd7ba'
+background = '#101010'
 
 [colors.normal]
-black   = '#090618'
-red     = '#c34043'
-green   = '#76946a'
-yellow  = '#c0a36e'
-blue    = '#7e9cd8'
-magenta = '#957fb8'
-cyan    = '#6a9589'
-white   = '#c8c093'
-
-[colors.bright]
-black   = '#727169'
-red     = '#e82424'
-green   = '#98bb6c'
-yellow  = '#e6c384'
-blue    = '#7fb4ca'
-magenta = '#938aa9'
-cyan    = '#7aa89f'
-white   = '#dcd7ba'
-
-[colors.selection]
-background = '#2d4f67'
-foreground = '#c8c093'
-
-[[colors.indexed_colors]]
-index = 16
-color = '#ffa066'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#ff5d62'
+# black is gray0
+black = '#080808'
+red = '#D70000'
+green = '#789978'
+yellow = '#ffAA88'
+blue = '#7788AA'
+magenta = '#D7007D'
+# cyan is set to lack
+cyan = '#708090' 
+# white is set to luster
+white = '#DEEEED'
 
 [font]
 size = 14

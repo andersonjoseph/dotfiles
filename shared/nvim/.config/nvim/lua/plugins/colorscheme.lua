@@ -1,11 +1,10 @@
 return {
-    "sho-87/kanagawa-paper.nvim",
+    "slugbyte/lackluster.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
-    config = function ()
-      require('kanagawa-paper').setup({
-      })
-      vim.cmd("colorscheme kanagawa-paper")
-    end
+    init = function()
+        --vim.cmd.colorscheme("lackluster")
+        --vim.cmd.colorscheme("lackluster-hack")
+        vim.cmd.colorscheme("lackluster-mint")
+    end,
 }

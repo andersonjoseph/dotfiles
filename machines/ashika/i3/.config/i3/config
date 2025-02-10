@@ -40,7 +40,7 @@ exec --no-startup-id "/home/$USER/bin/startup-setup.sh"
 ### Custom Bindings
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id PATH=$HOME/bin:$PATH dmenu_run -nb "#272e33" -nf "#d3c6aa" -sb "#a7c080" -sf "#272e33"
+bindsym $mod+p exec --no-startup-id PATH=$HOME/bin:$PATH dmenu_run -fn 'GohuFont 14 Nerd Font Mono-10' -p "Run:"  -nb '#0A0A0A'  -nf '#DEEEED'  -sb '#7788AA'  -sf '#DEEEED'
 
 # split in horizontal orientation
 bindsym $mod+x split h
@@ -187,25 +187,52 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #7E9CD8 #7E9CD8 #DCD7BA #7E9CD8   #7E9CD8
-client.focused_inactive #2A2A37 #1F1F28 #DCD7BA #2A2A37   #1F1F28
-client.unfocused        #1F1F28 #1F1F28 #727169 #1F1F28   #1F1F28
-client.urgent           #C34043 #C34043 #DCD7BA #C34043   #C34043
-client.placeholder      #1F1F28 #1F1F28 #DCD7BA #1F1F28   #1F1F28
 
-# Start i3bar to display a workspace bar
+# ===========================
+#        Lackluster Theme
+# ===========================
+
+# Define color variables for easy maintenance
+set $primary_background   #0A0A0A
+set $normal_black        #080808
+set $normal_red          #D70000
+set $normal_green        #789978
+set $normal_yellow       #ffAA88
+set $normal_blue         #7788AA
+set $normal_magenta      #D7007D
+set $normal_cyan         #708090
+set $normal_white        #DEEEED
+
+# ===========================
+#        Window Colors
+# ===========================
+
+# class                 border    background  text      indicator  child_border
+client.focused          $normal_cyan  $normal_cyan  $normal_white  $normal_cyan   $normal_cyan
+client.focused_inactive $normal_black $primary_background $normal_white $normal_black $normal_black
+client.unfocused        $normal_black $primary_background $normal_cyan  $normal_black $normal_black
+client.urgent           $normal_red   $normal_red    $normal_white  $normal_red     $normal_red
+client.placeholder      $normal_black $primary_background $normal_white $normal_black  $normal_black
+
+# ===========================
+#           Bar
+# ===========================
+
 bar {
-	font pango:GohuFont 11 Nerd Font Mono 10
-        status_command i3blocks
-        position top
+    font pango:GohuFont 11 Nerd Font Mono 10
+    status_command i3blocks
+    position top
 
-        colors {
-          background #1F1F28
+    colors {
+        background $primary_background
 
-          # <colorclass>     <border> <background> <text>
-          focused_workspace  #7E9CD8 #7E9CD8 #DCD7BA
-          active_workspace   #1F1F28 #1F1F28 #957FB8
-          inactive_workspace #1F1F28 #1F1F28 #727169
-        }
+        # <colorclass>                 <border>           <background>    <text>
+        focused_workspace    $normal_blue          $normal_blue      $normal_white
+        active_workspace     $normal_black         $normal_black     $normal_magenta
+        inactive_workspace   $normal_black         $normal_black     $normal_cyan
+        urgent_workspace     $normal_red           $normal_red       $normal_white
+
+        # Example for other bar elements (optional)
+        # user can customize further as needed
+    }
 }
