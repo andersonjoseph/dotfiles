@@ -16,7 +16,7 @@ cyan = '#708090'
 white = '#DEEEED'
 
 [font]
-size = 14
+size = 18
 normal.family = "GohuFont 14 Nerd Font Mono"
 bold.family = "GohuFont 14 Nerd Font Mono"
 italic.family = "GohuFont 14 Nerd Font Mono"

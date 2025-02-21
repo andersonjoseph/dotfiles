@@ -38,4 +38,4 @@ wtf() {
 alias cl='clear'
 
 # Prompt
-source ~/.bash-powerline.sh
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.json)"
