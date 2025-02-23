@@ -71,7 +71,7 @@ bindsym $mod+Right exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10
 bindsym $mod+Left exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
  
 # Use Mouse+$mod to drag floating windows to their wanted position
-# floating_modifier $mod
+floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
