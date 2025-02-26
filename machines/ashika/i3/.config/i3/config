@@ -190,32 +190,33 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # ===========================
-#        Lackluster Theme
+#       Nordic.nvim Theme
 # ===========================
+#
+# Adapted from the provided Nordic palette.
 
-# Define color variables for easy maintenance
-set $primary_background   #0A0A0A
-set $normal_black        #080808
-set $normal_red          #D70000
-set $normal_green        #789978
-set $normal_yellow       #ffAA88
-set $normal_blue         #7788AA
-set $normal_magenta      #D7007D
-set $normal_cyan         #708090
-set $normal_white        #DEEEED
+# Define color variables from the palette.
+set $primary_background  #242933
+set $normal_black        #191D24
+set $normal_red          #BF616A
+set $normal_green        #A3BE8C
+set $normal_yellow       #EBCB8B
+set $normal_blue         #81A1C1
+set $normal_magenta      #B48EAD
+set $normal_cyan         #8FBCBB
+set $normal_white        #E5E9F0
 
 # ===========================
 #        Window Colors
 # ===========================
-
-# class                 border    background  text      indicator  child_border
-client.focused          $normal_cyan  $normal_cyan  $normal_white  $normal_cyan   $normal_cyan
-client.focused_inactive $normal_black $primary_background $normal_white $normal_black $normal_black
-client.unfocused        $normal_black $primary_background $normal_cyan  $normal_black $normal_black
-client.urgent           $normal_red   $normal_red    $normal_white  $normal_red     $normal_red
-client.placeholder      $normal_black $primary_background $normal_white $normal_black  $normal_black
+#
+# class                 border         background         text            indicator        child_border
+client.focused          $normal_cyan   $normal_cyan       $normal_white   $normal_cyan     $normal_cyan
+client.focused_inactive $normal_black  $primary_background $normal_white   $normal_black    $normal_black
+client.unfocused        $normal_black  $primary_background $normal_cyan    $normal_black    $normal_black
+client.urgent           $normal_red    $normal_red        $normal_white   $normal_red      $normal_red
+client.placeholder      $normal_black  $primary_background $normal_white   $normal_black    $normal_black
 
 # ===========================
 #           Bar
@@ -223,19 +224,19 @@ client.placeholder      $normal_black $primary_background $normal_white $normal_
 
 bar {
     font pango:GohuFont 11 Nerd Font Mono 10
+    tray_output HDMI-0
     status_command i3blocks
     position top
 
     colors {
         background $primary_background
 
-        # <colorclass>                 <border>           <background>    <text>
-        focused_workspace    $normal_blue          $normal_blue      $normal_white
-        active_workspace     $normal_black         $normal_black     $normal_magenta
-        inactive_workspace   $normal_black         $normal_black     $normal_cyan
-        urgent_workspace     $normal_red           $normal_red       $normal_white
+        # <colorclass>        <border>       <background>    <text>
+        focused_workspace    $normal_blue    $normal_blue    $normal_white
+        active_workspace     $normal_black   $normal_black   $normal_magenta
+        inactive_workspace   $normal_black   $normal_black   $normal_cyan
+        urgent_workspace     $normal_red     $normal_red     $normal_white
 
-        # Example for other bar elements (optional)
-        # user can customize further as needed
+        # Optional further bar element color tweaks can go here.
     }
 }
