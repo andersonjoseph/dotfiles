@@ -43,6 +43,9 @@ exec --no-startup-id nm-applet
 # setup monitors and other tools
 exec --no-startup-id "/home/$USER/bin/startup-setup.sh"
 
+# auth agent
+exec --no-startup-id lxpolkit
+
 ### Custom Bindings
 
 # Launch dmenu with Lackluster Theme and Enhanced Options
