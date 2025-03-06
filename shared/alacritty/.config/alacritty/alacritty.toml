@@ -29,7 +29,7 @@ text = '#000000'
 background = '#F0DFAF'
 
 [font]
-size = 18
+size = 14
 normal.family = "GohuFont 14 Nerd Font Mono"
 bold.family = "GohuFont 14 Nerd Font Mono"
 italic.family = "GohuFont 14 Nerd Font Mono"
