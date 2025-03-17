@@ -43,7 +43,7 @@ return {
       lsp_zero.extend_lspconfig()
 
       require('mason-lspconfig').setup({
-	ensure_installed = {'tsserver', 'gopls'},
+	ensure_installed = {'gopls'},
 	handlers = {
 	  function(server_name)
 	    require('lspconfig')[server_name].setup({})

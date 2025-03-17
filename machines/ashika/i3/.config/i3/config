@@ -190,22 +190,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 # ===========================
-#       Nordic.nvim Theme
+#       Kaganawa Theme
 # ===========================
 #
 # Adapted from the provided Nordic palette.
 
 # Define color variables from the palette.
-set $primary_background  #242933
-set $normal_black        #191D24
-set $normal_red          #BF616A
-set $normal_green        #A3BE8C
-set $normal_yellow       #EBCB8B
-set $normal_blue         #81A1C1
-set $normal_magenta      #B48EAD
-set $normal_cyan         #8FBCBB
-set $normal_white        #E5E9F0
+set $primary_background  #1F1F28
+set $normal_black        #393836
+set $normal_red          #c4746e
+set $normal_green        #699469
+set $normal_yellow       #c4b28a
+set $normal_blue         #435965
+set $normal_magenta      #a292a3
+set $normal_cyan         #8ea49e
+set $normal_white        #C8C093
 
 # ===========================
 #        Window Colors
@@ -224,7 +225,6 @@ client.placeholder      $normal_black  $primary_background $normal_white   $norm
 
 bar {
     font pango:GohuFont 11 Nerd Font Mono 10
-    tray_output HDMI-0
     status_command i3blocks
     position top
 

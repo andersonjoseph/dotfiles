@@ -1,32 +1,48 @@
-# Colors (Nordic)
+# -----------------------------------------------------------------------------
+# Kanagawa Paper Ink
+# Upstream: https://github.com/thesimonho/kanagawa-paper.nvim/master/extras/alacritty/kanagawa-paper-ink.toml
+# URL: https://github.com/alacritty/alacritty
+# -----------------------------------------------------------------------------
 
 [colors.primary]
-background = '#242933'
-foreground = '#BBBDAF'
+background = '#1F1F28'
+foreground = '#DCD7BA'
 
-[colors.normal]
-black = '#191C1D'
-red = '#BD6062'
-green = '#A3D6A9'
-yellow = '#F0DFAF'
-blue = '#8FB4D8'
-magenta = '#C7A9D9'
-cyan = '#B6D7A8'
-white = '#BDC5BD'
-
-[colors.bright]
-black = '#727C7C'
-red = '#D18FAF'
-green = '#B7CEB0'
-yellow = '#BCBCBC'
-blue = '#E0CF9F'
-magenta = '#C7A9D9'
-cyan = '#BBDA97'
-white = '#BDC5BD'
+[colors.cursor]
+cursor = '#c4b28a'
+text = '#1F1F28'
 
 [colors.selection]
-text = '#000000'
-background = '#F0DFAF'
+background = '#363646'
+foreground = '#9e9b93'
+
+[colors.normal]
+black = '#393836'
+red = '#c4746e'
+green = '#699469'
+yellow = '#c4b28a'
+blue = '#435965'
+magenta = '#a292a3'
+cyan = '#8ea49e'
+white = '#C8C093'
+
+[colors.bright]
+black = '#aca9a4'
+red = '#cc928e'
+green = '#72a072'
+yellow = '#d4c196'
+blue = '#698a9b'
+magenta = '#b4a7b5'
+cyan = '#96ada7'
+white = '#d5cd9d'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#b6927b'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#c4746e'
 
 [font]
 size = 14
