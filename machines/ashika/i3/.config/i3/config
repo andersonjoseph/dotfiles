@@ -58,8 +58,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f exec --no-startup-id thunar
 
 # Screenshots
-bindsym $mod+Home exec --no-startup-id sh -c "maim --select | xclip -selection clipboard -t image/png"
-bindsym $mod+Home+Shift --release exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s).png"
+# bindsym Shift+Print exec --no-startup-id sh -c "maim --select | xclip -selection clipboard -t image/png"
+bindsym Print --release exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s).png"
 
 # Volume
 set $refresh_i3status killall -SIGUSR1 i3status
