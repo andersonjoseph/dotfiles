@@ -43,7 +43,7 @@ exec --no-startup-id lxpolkit
 ### Custom Bindings
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id PATH=$HOME/bin:$PATH dmenu_run -fn 'GohuFont 14 Nerd Font Mono-10' -p "Run:"  -nb '#0A0A0A'  -nf '#DEEEED'  -sb '#7788AA'  -sf '#DEEEED'
+bindsym $mod+p exec --no-startup-id PATH=$HOME/bin:$PATH dmenu_run -fn 'GohuFont 14 Nerd Font Mono-13' -p "Run:"  -nb '#0A0A0A'  -nf '#DEEEED'  -sb '#7788AA'  -sf '#DEEEED'
 
 # split in horizontal orientation
 bindsym $mod+x split h
