@@ -45,8 +45,8 @@ index = 17
 color = '#c4746e'
 
 [font]
-size = 14
-normal.family = "GohuFont 14 Nerd Font Mono"
-bold.family = "GohuFont 14 Nerd Font Mono"
-italic.family = "GohuFont 14 Nerd Font Mono"
-bold_italic.family = "GohuFont 14 Nerd Font Mono"
+size = 16.5
+normal.family = "DepartureMono Nerd Font Propo"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
