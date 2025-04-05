@@ -64,7 +64,7 @@ bindsym $mod+Shift+f exec --no-startup-id thunar
 
 # Screenshots
 # bindsym $mod+Home exec --no-startup-id sh -c "maim --select | xclip -selection clipboard -t image/png"
-bindsym $mod+Home --release exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s).png"
+bindsym $mod+grave --release exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s).png"
 
 # Volume
 bindsym $mod+Up exec --no-startup-id pactl set-sink-port @DEFAULT_SINK@ analog-output-lineout && $refresh_i3status
