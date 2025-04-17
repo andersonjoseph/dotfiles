@@ -1,4 +1,5 @@
 require("settings")
+require("lsp-loader")
 require("mappings")
 require("commands")
 require("plugin-loader")
