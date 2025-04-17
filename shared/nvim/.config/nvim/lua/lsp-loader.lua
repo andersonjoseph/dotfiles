@@ -17,18 +17,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map("<leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     map("<leader>gi", vim.lsp.buf.implementation, "[G]oto [I]implementation")
     map("<leader>vr", vim.lsp.buf.references, "[V]iew [R]eferences")
+    map("<leader>fb", vim.lsp.buf.format, "[F]ormat [B]buffer")
 
-    -- formatting on save
-    if not client:supports_method('textDocument/willSaveWaitUntil')
-      and client:supports_method('textDocument/formatting') then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-	group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
-	buffer = ev.buf,
-	callback = function()
-	  vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
-	end,
-      })
-    end
   end,
 })
 
