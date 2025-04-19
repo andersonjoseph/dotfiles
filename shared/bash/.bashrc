@@ -32,10 +32,22 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Aliases
 wtf() {
-    sudo $(history -p !!) 
+    sudo $(fc -ln -1) 
 }
 
 alias cl='clear'
+
+# send the output of the last command to a neovim buffer
+tnv() {
+  last_command=$(fc -ln -1)
+  if [[ $last_command == "tnv" ]]; then
+    return 1
+  fi
+
+  local last_command_output
+  last_command_output=$(bash -c "$last_command")
+  echo "$last_command_output" | nvim
+}
 
 # Prompt
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.json)"
