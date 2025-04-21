@@ -51,8 +51,6 @@ The config uses native Neovim LSP with the following features:
 |------|-----------------|-------------|
 | Normal | `K`  | Trigger LSP hover information for the symbol under the cursor |
 | Normal | `<CR>` | Clears the search highlight |
-| Normal | `<leader>[` | Switches to the previous buffer |
-| Normal | `<leader>]` | Switches to the next buffer |
 | Normal | `<leader>q` | Closes the current buffer and switches to the next one |
 | Normal | `<c-s>` | Saves the current file |
 | Insert | `<c-s>` | Exits insert mode and saves the current file |
@@ -61,11 +59,21 @@ The config uses native Neovim LSP with the following features:
 | Normal | `<leader>rn` | Rename the symbol under the cursor using LSP capabilities |
 | Normal | `<leader>gd` | Jump to the definition of the symbol under the cursor |
 | Normal | `<leader>gi` | Jump to the implementation of the symbol under the cursor |
-| Normal | `<leader>vr` | Find all references to the symbol under the cursor using LSP |
-| Normal | `<leader>y` | Copy to system clipboard |
 | Visual | `<leader>y` | Copy selection to system clipboard |
 | Normal | `<leader>p` | Paste from system clipboard |
 | Normal | `<C-n>` | Toggle NvimTree file explorer |
+
+## Fuzzy Finder (FZF) Mappings
+
+| Mode | Key Combination | Description |
+|------|-----------------|-------------|
+| Normal | `<leader>ff` | Find files in current working directory |
+| Normal | `<leader>fg` | Live grep across files |
+| Normal | `<leader>fb` | Find in current buffer |
+| Normal | `<leader>fm` | Find marks |
+| Normal | `<leader>f<` | Resume previous find |
+| Normal | `<leader>fo` | Find open buffers |
+| Normal | `<leader>fr` | Find LSP references |
 
 ## Plugins
 
@@ -73,7 +81,7 @@ The config uses native Neovim LSP with the following features:
 |--------|-------------|------|
 | kanagawa-paper.nvim | A light theme variant of the Kanagawa colorscheme | [GitHub](https://github.com/thesimonho/kanagawa-paper.nvim) |
 | blink.cmp | Modern completion menu with snippets support | [GitHub](https://github.com/saghen/blink.cmp) |
-| ctrlp.vim | A fuzzy file search plugin for Vim | [GitHub](https://github.com/ctrlpvim/ctrlp.vim) |
+| fzf-lua | Fuzzy finder for Neovim | [GitHub](https://github.com/ibhagwan/fzf-lua) |
 | lualine.nvim | A blazing fast and easy to configure Neovim statusline plugin written in Lua | [GitHub](https://github.com/nvim-lualine/lualine.nvim) |
 | nvim-web-devicons | A Lua fork of vim-devicons for Neovim, providing file icons | [GitHub](https://github.com/kyazdani42/nvim-web-devicons) |
 | nvim-tree.lua | A file explorer tree for Neovim written in Lua | [GitHub](https://github.com/kyazdani42/nvim-tree.lua) |
