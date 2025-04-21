@@ -67,12 +67,6 @@ The config uses native Neovim LSP with the following features:
 | Normal | `<leader>p` | Paste from system clipboard |
 | Normal | `<C-n>` | Toggle NvimTree file explorer |
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `:Grep [args]` | Performs a grep search and opens results in quickfix window |
-
 ## Plugins
 
 | Plugin | Description | Link |
