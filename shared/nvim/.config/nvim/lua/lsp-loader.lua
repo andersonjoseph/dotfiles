@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map("<leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     map("<leader>gi", vim.lsp.buf.implementation, "[G]oto [I]implementation")
     map("<leader>pb", vim.lsp.buf.format, "[P]rettify [B]buffer")
+    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]action")
   end,
 })
 
