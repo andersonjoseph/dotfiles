@@ -12,7 +12,7 @@ return {
     {"<leader>fb", "<cmd>FzfLua lgrep_curbuf<cr>", desc="find in buffer"},
     {"<leader>fm", "<cmd>FzfLua marks <cr>", desc="find marks"},
     {"<leader>f<", "<cmd>FzfLua resume <cr>", desc="resume previous find"},
-    {"<leader>fo", "<cmd>FzfLua buffers <cr>", desc="find open buffers"},
+    {"<leader><leader>", "<cmd>FzfLua buffers <cr>", desc="find open buffers"},
     {"<leader>fr", "<cmd>FzfLua lsp_references <cr>", desc="find references"},
   }
 }

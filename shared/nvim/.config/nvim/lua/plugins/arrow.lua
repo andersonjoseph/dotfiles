@@ -5,6 +5,11 @@ return {
   },
   opts = {
     show_icons = true,
-    leader_key = 'm', -- Recommended to be a single key
+    leader_key = 'm',
+    hide_handbook = true,
+    mappings = {
+      toggle = "a",
+      clear_all_items = "X",
+    }
   }
 }
