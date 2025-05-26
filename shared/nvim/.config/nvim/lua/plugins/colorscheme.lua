@@ -1,9 +1,12 @@
 return {
-  "thesimonho/kanagawa-paper.nvim",
+  "ellisonleao/gruvbox.nvim",
   lazy = false,
   priority = 1000,
-  opts = {},
+  opts = {
+    contrast = "",
+  },
   init = function()
-      vim.cmd.colorscheme("kanagawa-paper-ink")
+      vim.o.background = "dark"
+      vim.cmd.colorscheme("gruvbox")
     end,
 }

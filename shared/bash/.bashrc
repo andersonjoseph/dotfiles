@@ -51,6 +51,7 @@ tnv() {
 }
 
 # Prompt
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.json)"
+export STARSHIP_CONFIG="$HOME/dotfiles/shared/bash/prompt.toml"
+eval "$(starship init bash)"
 
 export MANPAGER='nvim +Man!'
