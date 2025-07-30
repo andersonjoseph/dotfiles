@@ -1,0 +1,97 @@
+/* ---- General Waybar Style ---- */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Terminess Nerd Font Mono", monospace;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #1f1f28; /* background */
+  color: #dcd7ba; /* foreground */
+}
+
+/* ---- Module Styling ---- */
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#tray,
+#custom-power,
+#custom-notification {
+  padding: 0 5px;
+  margin: 4px 0;
+}
+
+/* ---- Workspaces ---- */
+#workspaces button {
+  padding: 0 5px;
+  color: #7e9cd8; /* blue */
+  background: transparent;
+}
+
+#workspaces button.focused {
+  color: #dcd7ba; /* foreground */
+  background: #6a9589; /* selection-background / cyan */
+  border-radius: 4px;
+}
+
+#workspaces button:hover {
+  background: #6a9589; /* selection-background / cyan */
+  color: #dcd7ba; /* foreground */
+  border-radius: 4px;
+}
+
+/* ---- Right Modules ---- */
+#cpu {
+  color: #957fb8; /* magenta */
+}
+
+#memory {
+  color: #7aa89f; /* bright cyan */
+}
+
+#pulseaudio {
+  color: #7fb4ca; /* bright blue */
+}
+
+#pulseaudio.muted {
+  color: #727169; /* bright black */
+}
+
+#clock {
+  color: #ff9e3b; /* bright yellow */
+}
+
+/* ---- Battery ---- */
+#battery {
+  color: #76946a; /* green */
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #7e9cd8; /* blue */
+}
+
+#battery.warning {
+  color: #dca561; /* yellow */
+}
+
+#battery.critical {
+  color: #c34043; /* red */
+}
+
+/* ---- Tooltip ---- */
+tooltip {
+  background: #16161d; /* black */
+  border: 1px solid #6a9589; /* cyan */
+  border-radius: 4px;
+}
+
+tooltip label {
+  color: #dcd7ba; /* foreground */
+}
