@@ -1,0 +1,157 @@
+# ~/.config/sway/config
+
+# Mod key
+set $mod Mod1
+
+exec autotiling-rs
+
+font pango:Noto Sans 0.001
+titlebar_padding 1
+
+gaps inner 6
+gaps outer 3
+
+input "type:touchpad" {
+	dwt enabled
+	tap enabled
+	natural_scroll enabled
+	middle_emulation enabled
+}
+
+exec swaybg -m fill ~/Pictures/wallpaper.png
+
+# Lock screen
+exec xss-lock -- swaylock
+
+### Idle configuration
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
+
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+
+# Network & Polkit
+exec nm-applet
+exec lxpolkit
+
+set $term foot
+
+set $rofi_cmd rofi -terminal '$term'
+
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+### Launcher
+bindsym $mod+p exec $menu
+
+### Splits & fullscreen
+bindsym $mod+x split h
+bindsym $mod+y split v
+bindsym $mod+f fullscreen toggle
+
+### File manager
+bindsym $mod+Shift+f exec thunar
+
+### Screenshots (Wayland)
+# interactive region
+bindsym Print exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
+
+### Volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+### Brightness (if on ashika)
+bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+### Floating modifier & drag
+floating_modifier $mod
+
+### Terminal, kill, focus, move
+bindsym $mod+Return exec foot
+bindsym $mod+q kill
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+### Toggle floating, mode toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space       focus mode_toggle
+
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+### Reload, restart, exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "swaymsg exit"
+
+### Resize mode
+mode "resize" {
+    bindsym h resize shrink width  10 px or 10 ppt
+    bindsym j resize grow  height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow  width  10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Kanagawa-paper Theme colors
+set $primary_background  #1F1F28
+set $normal_black        #16161D
+set $normal_red          #C34043
+set $normal_green        #76946A
+set $normal_yellow       #DCA561
+set $normal_blue         #7E9CD8
+set $normal_magenta      #957FB8
+set $normal_cyan         #6A9589
+set $normal_white        #DCD7BA
+
+# Window colors
+client.focused          $normal_blue   $normal_blue       \
+                        $primary_background $normal_blue
+client.focused_inactive $normal_black  $primary_background \
+                        $normal_white   $normal_black
+client.unfocused        $normal_black  $primary_background \
+                        $normal_cyan    $normal_black
+client.urgent           $normal_red    $normal_red        \
+                        $normal_white   $normal_red
+
+bar { 
+     swaybar_command waybar
+}
