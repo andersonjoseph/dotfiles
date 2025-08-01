@@ -11,9 +11,6 @@
 
 {{ if eq .chezmoi.hostname "almazrah" }}
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 99.93
-
-# disable suspend
-xset s off -dpms
 {{ end }}
 
 set $mod Mod1
