@@ -9,6 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+{{ if eq .chezmoi.hostname "almazrah" }}
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 99.93
+{{ end }}
+
 set $mod Mod1
 
 for_window [class="^.*"] border pixel 0
@@ -39,7 +43,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # init setup and other tools
-exec --no-startup-id "/home/$USER/bin/startup-setup.sh"
 exec --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper
 
 # auth agent
