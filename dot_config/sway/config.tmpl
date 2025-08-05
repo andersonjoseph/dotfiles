@@ -58,6 +58,7 @@ bindsym $mod+Shift+f exec thunar
 ### Screenshots (Wayland)
 # interactive region
 bindsym Print exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
+bindsym $mod+s exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
 
 ### Volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -65,7 +66,13 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-### Brightness (if on ashika)
+{{ if eq .chezmoi.hostname "almazrah" }}
+bindcode 94 exec --no-startup-id "/home/$USER/bin/change-sound-device.sh"
+bindsym $mod+period  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym $mod+comma exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+{{ end }}
+
+### Brightness
 bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
