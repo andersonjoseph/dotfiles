@@ -18,7 +18,7 @@ input "type:touchpad" {
 	middle_emulation enabled
 }
 
-exec swaybg -m fill ~/Pictures/wallpaper.png
+exec_always swaybg -m fill -i ~/Pictures/wallpaper
 
 # Lock screen
 exec xss-lock -- swaylock
