@@ -4,7 +4,7 @@
 set $mod Mod1
 
 # autorun portal
-exec dbus-update-activation-environment DISPLAY XDG_CURRENT_DESKTOP
+exec_always dbus-update-activation-environment DISPLAY XDG_CURRENT_DESKTOP
 
 exec autotiling-rs
 
