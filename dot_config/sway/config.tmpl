@@ -3,6 +3,12 @@
 # Mod key
 set $mod Mod1
 
+{{ if eq .chezmoi.hostname "almazrah" }}
+output HDMI-A-1 {
+  mode 1920x1080@99.930Hz
+}
+{{ end }}
+
 # autorun portal
 exec_always dbus-update-activation-environment DISPLAY XDG_CURRENT_DESKTOP
 
