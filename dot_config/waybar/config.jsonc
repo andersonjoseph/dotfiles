@@ -7,7 +7,7 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-left": ["sway/workspaces"],
   "modules-right": [
     "cpu",
     "memory",
@@ -23,9 +23,6 @@
     "all-outputs": true,
     "disable-scroll": false,
     "active-only": false,
-  },
-  "sway/window": {
-    "format": "{title}",
   },
   "tray": {
     "show-passive-items": true,
