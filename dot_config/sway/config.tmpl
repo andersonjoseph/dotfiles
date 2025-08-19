@@ -3,6 +3,8 @@
 # Mod key
 set $mod Mod1
 
+font pango:Terminess Nerd Font Mono 9
+
 {{ if eq .chezmoi.hostname "almazrah" }}
 output HDMI-A-1 {
   mode 1920x1080@99.930Hz
@@ -11,14 +13,6 @@ output HDMI-A-1 {
 
 # autorun portal
 exec_always dbus-update-activation-environment DISPLAY XDG_CURRENT_DESKTOP
-
-exec autotiling-rs
-
-font pango:Noto Sans 0.001
-titlebar_padding 1
-
-gaps inner 6
-gaps outer 3
 
 input "type:touchpad" {
 	dwt enabled
@@ -60,13 +54,17 @@ bindsym $mod+x split h
 bindsym $mod+y split v
 bindsym $mod+f fullscreen toggle
 
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
 ### File manager
 bindsym $mod+Shift+f exec thunar
 
 ### Screenshots (Wayland)
 # interactive region
 bindsym Print exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
-bindsym $mod+s exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
+bindsym $mod+Grave exec grim -g "$(slurp)" ~/Pictures/$(date +%s).png
 
 ### Volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
