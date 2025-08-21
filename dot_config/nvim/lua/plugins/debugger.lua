@@ -35,7 +35,7 @@ return {
           if vim.api.nvim_get_current_win() ~= view_win then
             vim.api.nvim_set_current_win(view_win)
           end
-        end, 10)
+        end, 90)
       end
     end
 
