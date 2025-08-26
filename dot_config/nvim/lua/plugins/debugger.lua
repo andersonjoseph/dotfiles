@@ -26,6 +26,7 @@ return {
     vim.keymap.set('n', '<leader>do', dapView.open,          { noremap=true })
 
     vim.keymap.set('n', '<leader>ds', dap.continue, { noremap=true })
+    vim.keymap.set('n', '<leader>dc', dap.terminate, { noremap=true })
 
     local function keep_cursor_in_view(action)
       return function()
