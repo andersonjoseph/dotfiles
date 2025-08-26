@@ -30,3 +30,7 @@ white   = '#DCD7BA'
 [font]
 size = 12
 normal.family = "Terminess Nerd Font Mono"
+
+[window]
+opacity = 0.95
+blur = true
