@@ -1,5 +1,7 @@
 # ~/.config/sway/config
 
+include /etc/sway/config.d/*
+
 # Mod key
 set $mod Mod1
 
@@ -11,8 +13,7 @@ output HDMI-A-1 {
 }
 {{ end }}
 
-# autorun portal
-exec_always dbus-update-activation-environment DISPLAY XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 input "type:touchpad" {
 	dwt enabled
