@@ -1,97 +1,179 @@
-/* ---- General Waybar Style ---- */
+/* --- Global Styles --- */
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "Terminess Nerd Font Mono", monospace;
-  font-size: 12px;
+  font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
+  font-size: 13px;
   min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
 }
 
-window#waybar {
-  background: #1f1f28; /* background */
-  color: #dcd7ba; /* foreground */
-}
-
-/* ---- Module Styling ---- */
-#workspaces,
-#window,
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#tray,
-#custom-power,
-#custom-notification {
-  padding: 0 5px;
-  margin: 4px 0;
-}
-
-/* ---- Workspaces ---- */
-#workspaces button {
-  padding: 0 5px;
-  color: #7e9cd8; /* blue */
+/* --- Waybar Container --- */
+#waybar {
   background: transparent;
+  color: #c6d0f5;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
+#workspaces,
+#memory,
+#cpu {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
+  margin-right: 5px;
+  border-radius: 6px; /* These modules are always rounded */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+  /* Transition for background-color and color only */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces {
+  padding: 2px;
+  margin-left: 7px; /* Margin from the far left edge */
+  margin-right: 5px; /* Spacing after the workspaces module */
+}
+
+/* Simple Hover effects for individual left modules - BRIGHTER COLOR */
+#memory:hover,
+#cpu:hover {
+  background-color: rgb(41, 42, 53); /* Brighter highlight */
+}
+
+#workspaces button {
+  color: #babbf1;
+  border-radius: 5px; /* Workspaces buttons are always rounded */
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
 }
 
 #workspaces button.focused {
-  color: #dcd7ba; /* foreground */
-  background: #6a9589; /* selection-background / cyan */
-  border-radius: 4px;
+  color: #99d1db;
+  background-color: rgba(153, 209, 219, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
 }
 
 #workspaces button:hover {
-  background: #6a9589; /* selection-background / cyan */
-  color: #dcd7ba; /* foreground */
-  border-radius: 4px;
+  background: rgb(41, 42, 53); /* Reference bright hover color */
+  color: #c6d0f5;
 }
 
-/* ---- Right Modules ---- */
+/* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
+#clock {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px; /* This module is always rounded */
+  box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Simple Hover effect for clock module - BRIGHTER COLOR */
+#clock:hover {
+  background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
+}
+
+/* --- Right Modules (Single, Seamless Bar ) --- */
+#bluetooth,
+#pulseaudio,
+#backlight,
+#network,
+#battery {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; 
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#battery:hover {
+  background-color: rgb(41, 42, 53);
+}
+
+#bluetooth {
+  margin-left: 0px; 
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#battery {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+}
+
 #cpu {
-  color: #957fb8; /* magenta */
+  color: #c6d0f5;
 }
 
 #memory {
-  color: #7aa89f; /* bright cyan */
-}
-
-#pulseaudio {
-  color: #7fb4ca; /* bright blue */
-}
-
-#pulseaudio.muted {
-  color: #727169; /* bright black */
+  color: #c6d0f5;
 }
 
 #clock {
-  color: #ff9e3b; /* bright yellow */
+  color: #99d1db;
+  font-weight: 500;
 }
 
-/* ---- Battery ---- */
+#pulseaudio {
+  color: #c6d0f5;
+}
+#backlight {
+  color: #c6d0f5;
+}
+
+#network {
+  color: #c6d0f5;
+}
+
+#network.disconnected {
+  color: #e78284;
+}
+
+#bluetooth {
+  color: #888888;
+  font-size: 16px;
+}
+#bluetooth.on {
+  color: #2196f3;
+}
+#bluetooth.connected {
+  color: #99d1db;
+}
 #battery {
-  color: #76946a; /* green */
+  color: #99d1db;;
+}
+#battery.charging {
+  color: #a6d189;
+}
+#battery.warning:not(.charging) {
+  color: #e78284;
 }
 
-#battery.charging,
-#battery.plugged {
-  color: #7e9cd8; /* blue */
-}
-
-#battery.warning {
-  color: #dca561; /* yellow */
-}
-
-#battery.critical {
-  color: #c34043; /* red */
-}
-
-/* ---- Tooltip ---- */
+/* --- Tooltip Styles --- */
 tooltip {
-  background: #16161d; /* black */
-  border: 1px solid #6a9589; /* cyan */
-  border-radius: 4px;
-}
-
-tooltip label {
-  color: #dcd7ba; /* foreground */
+  background-color: #1a1b26;
+  color: #dddddd;
+  padding: 5px 12px;
+  margin: 5px 0px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
 }
