@@ -14,10 +14,10 @@
 
   "modules-right": [
     "bluetooth",
-    "network",
     "pulseaudio", 
     "backlight",
-    "battery"
+    "tray",
+    "battery",
   ],
 
   "sway/workspaces": {
@@ -47,15 +47,6 @@
     "tooltip": false,
     "format": "{:%I:%M %p -  %A, %d}",
     "interval": 1
-  },
-
-  "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "interval": 5,
-    "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
   },
 
   "cpu": {
@@ -109,5 +100,10 @@
 	// "format-good": "", // An empty format will hide the module
 	// "format-full": "",
 	"format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    "show-passive-items": true,
+    "icon-size": 18,
+    "spacing": 10
   }
 }

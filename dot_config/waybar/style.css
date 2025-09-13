@@ -87,7 +87,7 @@
 #bluetooth,
 #pulseaudio,
 #backlight,
-#network,
+#tray,
 #battery {
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
@@ -102,7 +102,7 @@
 #bluetooth:hover,
 #pulseaudio:hover,
 #backlight:hover,
-#network:hover,
+#tray:hover,
 #battery:hover {
   background-color: rgb(41, 42, 53);
 }
@@ -137,14 +137,6 @@
 }
 #backlight {
   color: #c6d0f5;
-}
-
-#network {
-  color: #c6d0f5;
-}
-
-#network.disconnected {
-  color: #e78284;
 }
 
 #bluetooth {
