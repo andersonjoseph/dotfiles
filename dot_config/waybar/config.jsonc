@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-bottom": 0,
+  "margin-bottom": -5,
   "spacing" : 0,
 
   "modules-left": [
@@ -17,7 +17,7 @@
     "network",
     "pulseaudio", 
     "backlight",
-    "battery",
+    "battery"
   ],
 
   "sway/workspaces": {
@@ -59,15 +59,15 @@
   },
 
   "cpu": {
-    "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "interval": 60,
+    "format": "cpu {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "ghostty -e htop"
   },
 
   "memory": {
     "interval": 60,
-    "format": "{used:0.1f}G/{total:0.1f}G",
+    "format": "mem {used:0.1f}G/{total:0.1f}G",
     "tooltip-format": "Memory"
   },
 
@@ -109,19 +109,5 @@
 	// "format-good": "", // An empty format will hide the module
 	// "format-full": "",
 	"format-icons": ["", "", "", "", ""]
-  },
-
-  "custom/lock": {
-    "tooltip": false,
-    "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
-    "format" : ""
-  },
-
-  "custom/pomodoro": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "waybar-module-pomodoro --no-work-icons",
-    "on-click": "waybar-module-pomodoro toggle",
-    "on-click-right": "waybar-module-pomodoro reset",
   }
 }
